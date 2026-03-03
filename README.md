@@ -1,73 +1,180 @@
-# Welcome to your Lovable project
+# CodeForjHQ Dashboard
 
-## Project info
+A fully functional, responsive, command-center style React dashboard built for CodeForjHQ.com.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Built with React, Tailwind CSS, Context API, JWT authentication, and animated data-driven components.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Features
 
-**Use Lovable**
+### 🖥 Layout System
+- Fixed left sidebar + fixed top header (desktop)
+- Collapsible sidebar (260px → 80px) with smooth transition
+- Hamburger menu for mobile & tablet
+- Overlay drawer on small screens
+- Only main content scrolls
+- Sidebar collapse state persisted in localStorage
+- Scroll lock enabled when mobile drawer is open
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📊 Dashboard Sections (8 Fully Functional Modules)
 
-**Use your preferred IDE**
+### 1️⃣ Overview
+- Count-up metrics
+- Animated progress bars
+- Recent activity feed (fade-in + stagger animation)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 2️⃣ Repositories
+- Add / remove repository
+- Sync status with pulsing indicator
+- Branch selector dropdown
+- Global state updates via Context API
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 3️⃣ AI Analysis
+- Line, Bar, Radar charts (animated from 0 → value)
+- Optimization suggestion cards (slide + fade)
+- Technical debt meter (arc animation)
 
-Follow these steps:
+### 4️⃣ Code Review
+- Pull request list
+- Inline AI suggestions (slide-in)
+- Approve / Reject buttons with ripple animation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 5️⃣ Bugs & Performance
+- Bug list with animated severity badges
+- Performance charts (animated bars)
+- Resolved bugs fade-out effect
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 6️⃣ CI/CD Monitor
+- Live-style terminal build logs
+- Status icons (spin / pulse while building)
+- Deployment timeline animations
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 7️⃣ Team
+- Activity heatmap (color intensity animation)
+- Commit bar animations
+- Member cards stagger slide-in
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### 8️⃣ Settings
+- Animated tab switching
+- Smooth toggle switches
+- Focus glow inputs
+- Toast notifications on save
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🔐 Authentication System
 
-**Use GitHub Codespaces**
+- Login & Signup pages
+- Form validation
+- Password hashing
+- JWT authentication
+- Protected dashboard routes
+- AuthContext handles:
+  - Login
+  - Logout
+  - Session persistence
+  - Token validation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🧠 State Management
 
-This project is built with:
+Global state handled via Context API:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### AuthContext
+- User session
+- JWT storage
+- Route protection
 
-## How can I deploy this project?
+### AppContext
+Manages:
+- Repositories
+- Analysis data
+- Bugs
+- Pipelines
+- Team activity
+- Settings
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Data fetched from API or mock services on mount.
 
-## Can I connect a custom domain to my Lovable project?
+All UI interactions update global state and persist where required.
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🎨 UI / UX Design
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Theme:** Dark Command Center
+
+| Element | Color |
+|---------|--------|
+| Background | #000000 |
+| Text | #F1F9F4 |
+| Accent | #F60670 |
+| Card Shadow | #111111 |
+| Grid | #222222 |
+
+### Typography
+- Headings: Onest
+- Body: Manrope
+
+### Design System
+- Subtle elevation hover effects
+- Accent highlights
+- Clean modular widget cards
+- Professional performance-friendly animations
+
+---
+
+## 📈 Charts & Graphs
+
+Supports:
+- Chart.js
+- Recharts
+- ApexCharts
+
+Charts:
+- Animate from 0 → value on mount
+- Accent color: #F60670
+- Grid: #222222
+- Tooltip background: #111111
+- Tooltip text: #F1F9F4
+
+---
+
+## ✨ Animation System
+
+Consistent animation logic across all sections:
+
+- Count-up metrics
+- Progress fill animations
+- Fade-in + stagger lists
+- Slide-in panels
+- Pulsing status indicators
+- Arc fills
+- Ripple buttons
+- Smooth transitions everywhere
+
+Optimized for performance.
+
+---
+
+## 📱 Responsive Behavior
+
+### Mobile
+- Sidebar hidden
+- Hamburger → overlay drawer
+- Scrollable content
+- Overlay click closes sidebar
+
+### Tablet
+- Collapsible sidebar
+- Content shifts dynamically
+
+### Desktop
+- Fixed sidebar + header
+- Sidebar toggle works smoothly
+
+Fully responsive across all screen sizes.
