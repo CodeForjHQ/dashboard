@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 144 36% 96%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 144 36% 96%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 144 36% 96%;
+
+    --primary: 337 95% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 144 36% 96%;
+
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 337 95% 49%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 337 95% 49%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 144 36% 96%;
+    --sidebar-primary: 337 95% 49%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 144 36% 96%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 337 95% 49%;
+
+    --chart-1: 337 95% 49%;
+    --chart-2: 200 80% 50%;
+    --chart-3: 150 60% 45%;
+    --chart-4: 45 90% 55%;
+    --chart-5: 270 70% 55%;
+
+    --success: 150 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 90% 55%;
+    --warning-foreground: 0 0% 0%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(337 95% 49% / 0.15);
+  }
+  .glow-accent-strong {
+    box-shadow: 0 0 30px hsl(337 95% 49% / 0.25);
+  }
+  .card-elevated {
+    box-shadow: 0 4px 24px hsl(0 0% 0% / 0.5), 0 0 0 1px hsl(0 0% 15% / 0.5);
+  }
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.6), 0 0 0 1px hsl(337 95% 49% / 0.2);
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(0 0% 20%) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(0 0% 20%);
+    border-radius: 3px;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes terminal-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+.animate-count-up {
+  animation: count-up 0.5s ease-out forwards;
+}
+.animate-terminal-blink {
+  animation: terminal-blink 1s step-end infinite;
+}
